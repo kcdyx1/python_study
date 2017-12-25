@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<title>全球技术地图</title>
+<script src="http://www.globaltechmap.com/js/jquery/jquery-1.11.2.js?1513434866" type="text/javascript"></script><script src="http://www.globaltechmap.com/js/jquery/jquery-ui-1.11.2/jquery-ui.js?1513434866" type="text/javascript"></script><script src="http://www.globaltechmap.com/js/common.js?1513434866" type="text/javascript"></script> <link href="http://www.globaltechmap.com/js/jquery/jquery-ui-1.11.2/jquery-ui.css?1513434866" media="all" rel="stylesheet" type="text/css"/><link href="http://www.globaltechmap.com/css/lrtk.css?1513434866" media="all" rel="stylesheet" type="text/css"/><link href="http://www.globaltechmap.com/css/style.css?1513434866" media="all" rel="stylesheet" type="text/css"/> <script type="text/javascript">
+        function site_config(key) {return {"base_url":"http://www.globaltechmap.com/","window_id":49992}[key.toLowerCase()];}      </script>
+</head>
+<body>
+<div class="top">
+<div class="header"><div class="logo"><a href="http://www.globaltechmap.com/"><img alt="logo" src="http://www.globaltechmap.com/images/logo2.png"/></a></div>
+<!-- using block template Menu.Block.Main begin --><div class="wrap">
+<ul>
+<li><a class="main" href="http://www.globaltechmap.com/index/field?field_id=9">科技战略</a></li>
+<li><a class="main" href="http://www.globaltechmap.com/index/field?field_id=1">信息</a></li>
+<li><a class="main" href="http://www.globaltechmap.com/index/field?field_id=2">生物</a></li>
+<li><a class="main" href="http://www.globaltechmap.com/index/field?field_id=3">能源</a></li>
+<li><a class="main" href="http://www.globaltechmap.com/index/field?field_id=4">海洋</a></li>
+<li><a class="main" href="http://www.globaltechmap.com/index/field?field_id=5">航空</a></li>
+<li><a class="main" href="http://www.globaltechmap.com/index/field?field_id=6">航天</a></li>
+<li id="wrapxz"><a class="main" href="http://www.globaltechmap.com/index/field?field_id=7">新材料</a></li>
+<li><a class="main" href="http://www.globaltechmap.com/index/field?field_id=8">先进制造</a></li>
+</ul>
+</div><!-- using block template Menu.Block.Main end -->
+<div class="search">
+<form action="http://www.globaltechmap.com/document/index" method="post"><input name="search" type="hidden" value="1"/>
+<div class="inputwap">
+<input name="key" type="text"/><div class="search_bt"><a href="#"><img border="0" onclick="submit()" src="http://www.globaltechmap.com/images/ss.jpg"/></a></div>
+<div class="gjsearch"><a href="http://www.globaltechmap.com/document/index">高级搜索</a></div>
+</div>
+</form>
+</div> </div>
+</div>
+<div class="column">
+<div class="left"><!-- using block template Region.Block.Menu begin --> <div class="leftbox1">
+<img height="29" src="http://www.globaltechmap.com/images/region_0.jpg" width="29"/>
+<a href="http://www.globaltechmap.com/index/region?region=0"><span class="sideactive">全球</span></a>
+</div>
+<div class="leftbox1">
+<img height="29" src="http://www.globaltechmap.com/images/region_o_1.jpg" width="29"/>
+<a href="http://www.globaltechmap.com/index/region?region=o_1">欧盟</a>
+</div>
+<div class="leftbox1">
+<img height="29" src="http://www.globaltechmap.com/images/region_r_1.jpg" width="29"/>
+<a href="http://www.globaltechmap.com/index/region?region=r_1">中国</a>
+</div>
+<div class="leftbox1">
+<img height="29" src="http://www.globaltechmap.com/images/region_r_2.jpg" width="29"/>
+<a href="http://www.globaltechmap.com/index/region?region=r_2">美国</a>
+</div>
+<div class="leftbox1">
+<img height="29" src="http://www.globaltechmap.com/images/region_r_16.jpg" width="29"/>
+<a href="http://www.globaltechmap.com/index/region?region=r_16">印度</a>
+</div>
+<div class="leftbox1">
+<img height="29" src="http://www.globaltechmap.com/images/region_r_14.jpg" width="29"/>
+<a href="http://www.globaltechmap.com/index/region?region=r_14">以色列</a>
+</div>
+<div class="leftbox1">
+<img height="29" src="http://www.globaltechmap.com/images/region_r_6.jpg" width="29"/>
+<a href="http://www.globaltechmap.com/index/region?region=r_6">日本</a>
+</div>
+<div class="leftbox1">
+<img height="29" src="http://www.globaltechmap.com/images/region_others.jpg" width="29"/>
+<a href="http://www.globaltechmap.com/index/region?region=others">其他</a>
+</div>
+<!-- using block template Region.Block.Menu end --></div>
+<div class="zwwap">
+<div class="search_top"><!-- using block template Document.Block.SearchBar begin --><div class="search_ss">
+<form action="/index/field" method="post">
+<div class="form-group">
+<select name="field_id">
+<option value="0">全部领域</option>
+<option value="9">科技战略</option>
+<option value="1">信息</option>
+<option value="2">生物</option>
+<option value="3">能源</option>
+<option value="4">海洋</option>
+<option value="5">航空</option>
+<option value="6">航天</option>
+<option selected="" value="7">新材料</option>
+<option value="8">先进制造</option>
+</select>
+<select name="region_id">
+<option selected="" value="0">全球</option>
+<option value="39">阿根廷</option>
+<option value="25">爱尔兰</option>
+<option value="24">奥地利</option>
+<option value="9">澳大利亚</option>
+<option value="10">巴西</option>
+<option value="20">比利时</option>
+<option value="35">冰岛</option>
+<option value="27">波兰</option>
+<option value="26">丹麦</option>
+<option value="3">德国</option>
+<option value="11">俄罗斯</option>
+<option value="4">法国</option>
+<option value="22">芬兰</option>
+<option value="5">韩国</option>
+<option value="19">荷兰</option>
+<option value="12">加拿大</option>
+<option value="31">捷克</option>
+<option value="30">立陶宛</option>
+<option value="28">卢森堡</option>
+<option value="2">美国</option>
+<option value="41">南非</option>
+<option value="33">挪威</option>
+<option value="15">欧盟</option>
+<option value="21">葡萄牙</option>
+<option value="6">日本</option>
+<option value="13">瑞典</option>
+<option value="32">瑞士</option>
+<option value="36">沙特阿拉伯</option>
+<option value="37">土耳其</option>
+<option value="17">乌兹别克斯坦</option>
+<option value="7">西班牙</option>
+<option value="23">希腊</option>
+<option value="34">新加坡</option>
+<option value="38">新西兰</option>
+<option value="29">匈牙利</option>
+<option value="40">伊朗</option>
+<option value="14">以色列</option>
+<option value="18">意大利</option>
+<option value="16">印度</option>
+<option value="8">英国</option>
+<option value="1">中国</option>
+<option value="-1">其他</option>
+</select>
+<select name="type_id">
+<option selected="" value="1">关键字</option>
+<option value="2">标题</option>
+<option value="7">全文</option>
+</select>
+<input name="key" type="text" value="">
+<input style="width:60px; height:26px; background:#083461; color: #FFFFFF; border:none;" type="submit" value="搜索"/>
+<input name="search" type="hidden" value="1"/>
+</input></div>
+</form>
+</div><!-- using block template Document.Block.SearchBar end --></div>
+<!-- using content template Index.Field begin --><div class="nydj">
+<div class="nydjactive"><a href="#">按时间查看</a></div><div class="nydjnormal"><a href="http://www.globaltechmap.com/index/field?field_id=7&amp;type_id=1&amp;sort=hit">按点击量查看</a></div></div> <div class="ssck">
+<ul>
+<li><a href="http://www.globaltechmap.com/document/view?id=10546">以色列科学家研制出高生物相容性自组装肽-半导体材料<span class="righbox-tm">2017-11-17</span></a></li>
+<li><a href="http://www.globaltechmap.com/document/view?id=10527">我国科学家研发出新型相变材料，或将突破读写存储速度极限<span class="righbox-tm">2017-11-16</span></a></li>
+<li><a href="http://www.globaltechmap.com/document/view?id=10537">中科院研究人员在石墨炔作为催化剂应用研究中取得进展<span class="righbox-tm">2017-11-16</span></a></li>
+<li><a href="http://www.globaltechmap.com/document/view?id=10524">香港大学研制出新型防水防油物料<span class="righbox-tm">2017-11-15</span></a></li>
+<li><a href="http://www.globaltechmap.com/document/view?id=10505">美国华盛顿大学开发出可感应水的导电纸<span class="righbox-tm">2017-11-14</span></a></li>
+<li><a href="http://www.globaltechmap.com/document/view?id=10523">美国华盛顿大学研发出高效有机/钙钛矿杂化太阳能电池<span class="righbox-tm">2017-11-14</span></a></li>
+<li><a href="http://www.globaltechmap.com/document/view?id=10506">瑞士开发出新型橡胶材料，可在拉伸和压缩时产生电流<span class="righbox-tm">2017-11-13</span></a></li>
+<li><a href="http://www.globaltechmap.com/document/view?id=10496">美国开发出比头发丝细10000倍的新型纱线，可将动能转化为电量<span class="righbox-tm">2017-11-11</span></a></li>
+<li><a href="http://www.globaltechmap.com/document/view?id=10482">美科学家研发出几乎可匹敌蜘蛛丝强度的再生丝纤维<span class="righbox-tm">2017-11-10</span></a></li>
+<li><a href="http://www.globaltechmap.com/document/view?id=10474">韩国科学技术研究院开发出铑合金催化剂，可提升燃料电池性能<span class="righbox-tm">2017-11-09</span></a></li>
+<li><a href="http://www.globaltechmap.com/document/view?id=10480">美国研发出超轻纳米银丝气凝胶材料，有望推动能源和电子等行业发展<span class="righbox-tm">2017-11-09</span></a></li>
+<li><a href="http://www.globaltechmap.com/document/view?id=10656">美德克萨斯大学研制新型低成本电池阳极材料，可将电池容量提升两倍<span class="righbox-tm">2017-11-06</span></a></li>
+<li><a href="http://www.globaltechmap.com/document/view?id=10451">美国布鲁克海文国家实验室开发出基于纳米技术的隐形玻璃<span class="righbox-tm">2017-11-03</span></a></li>
+<li><a href="http://www.globaltechmap.com/document/view?id=10452">韩国研发出自主产生电能的纳米金属线，可在海洋中产生无限电能<span class="righbox-tm">2017-11-03</span></a></li>
+<li><a href="http://www.globaltechmap.com/document/view?id=10445">美国研发出新型结构的锂电池阴极材料，或为锂电池行业带来颠覆性突破<span class="righbox-tm">2017-11-02</span></a></li>
+<li><a href="http://www.globaltechmap.com/document/view?id=10438">美能源部国家可再生能源实验室开发出基于碳纳米管薄膜的新型热电材料<span class="righbox-tm">2017-11-01</span></a></li>
+<li><a href="http://www.globaltechmap.com/document/view?id=10337">俄罗斯开发出制造量子点材料的新技术，有助于研发吸收广谱太阳光的便宜太阳能电池<span class="righbox-tm">2017-10-31</span></a></li>
+<li><a href="http://www.globaltechmap.com/document/view?id=10426">美国加州大学圣塔芭芭拉分校仿贻贝制备出刚性和延展性优异的超强弹性体材料<span class="righbox-tm">2017-10-30</span></a></li>
+<li><a href="http://www.globaltechmap.com/document/view?id=10418">韩国蔚山科学技术大学利用介孔钙钛矿纳米材料开发出高性能金属空气电池催化剂<span class="righbox-tm">2017-10-27</span></a></li>
+<li><a href="http://www.globaltechmap.com/document/view?id=10415">俄莫斯科钢铁学院研发出石墨烯表面纳米微孔成孔技术<span class="righbox-tm">2017-10-25</span></a></li>
+</ul>
+</div>
+<!-- pagination -->
+<div class="fy">
+<nav><ul class="pagination"><li class="djright"><a aria-label="前一页" href="http://www.globaltechmap.com/index/field?field_id=7&amp;sort=published&amp;page=1"><img height="24" src="http://www.globaltechmap.com/images/fyl.jpg" width="24"/></a></li><li class="djnormal"><a href="http://www.globaltechmap.com/index/field?field_id=7&amp;sort=published&amp;page=1">1</a></li><li class="djactive"><a href="#">2</a><li class="djnormal"><a href="http://www.globaltechmap.com/index/field?field_id=7&amp;sort=published&amp;page=3">3</a></li><li class="djnormal"><a href="http://www.globaltechmap.com/index/field?field_id=7&amp;sort=published&amp;page=4">4</a></li><li class="djnormal"><a href="http://www.globaltechmap.com/index/field?field_id=7&amp;sort=published&amp;page=5">5</a></li><li class="djnormal"><a href="http://www.globaltechmap.com/index/field?field_id=7&amp;sort=published&amp;page=6">6</a></li><li><span aria-hidden="true">···</span></li><li class="djnormal"><a href="http://www.globaltechmap.com/index/field?field_id=7&amp;sort=published&amp;page=56">56</a></li><li class="djnormal"><a href="http://www.globaltechmap.com/index/field?field_id=7&amp;sort=published&amp;page=57">57</a></li><li class="djleft"><a aria-label="后一页" href="http://www.globaltechmap.com/index/field?field_id=7&amp;sort=published&amp;page=3"><img height="24" src="http://www.globaltechmap.com/images/fyr.jpg" width="24"/></a></li></li></ul></nav> </div>
+<!-- using content template Index.Field end --> </div>
+</div>
+<div class="footer"><a href="http://www.globaltechmap.com/comment/contact">联系我们</a></div>
+</body>
+</html><!-- Using template default -->
