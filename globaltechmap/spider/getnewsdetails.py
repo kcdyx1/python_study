@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 from getnews import get_news
 import pandas as pd
 
-page_list = (range(1,59))
+page_list = (range(1,10))
 for x in page_list:
     print(str(x))
     url = 'http://www.globaltechmap.com/index/field'
@@ -29,7 +29,7 @@ for x in page_list:
              news_detail['news_id'] = news_id
 
              New_record = news_detail['title'] + '^' + str(news_detail['news_id']) + '^' + news_detail['url'] + '^' + news_detail['date'] + '^' + news_detail['source'] + '^' + news_detail['area'] + '^' + news_detail['content'] + '^' + news_detail['source_url']
-             with open('xincailiao.csv', 'a') as fw:
+             with open('xcl.csv', 'a') as fw:
                  fw.write(New_record + '\n')
              print(news_detail['title'])
 
