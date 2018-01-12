@@ -14,8 +14,11 @@ with open("/Users/kangchen/python_study/globaltechmap/spider/extra_dict/stop_wor
         if not word:
             break
 
+field = 'xincailiao'
+year = '2015'
+
 # 输入需要分析的源文件
-daifenxi = 'xincailiao_neirong_2017.csv'
+daifenxi = field + '_neirong_' + year + '.csv'
 fencijieguo = []
 stat = {}
 
@@ -23,9 +26,7 @@ with open(daifenxi, 'r') as fr:
     nr = fr.read()
     jieguos = fenci(nr)
     for jieguo in jieguos:
-        if jieguo in stopwords:
-            continue
-        else:
+        if jieguo not in stopwords:
             if jieguo not in fencijieguo:
                 fencijieguo.append(jieguo)
             if jieguo not in stat:
@@ -36,8 +37,8 @@ with open(daifenxi, 'r') as fr:
 stat = sorted(stat.items(), key=lambda d: d[1], reverse=True)
 
 # 结果保存
-wenjianjia = "/Users/kangchen/python_study/globaltechmap/spider/Results/" 
-fencijieguo_wenjian = wenjianjia + '新材料2017.csv'
+jieguo_dizhi = "/Users/kangchen/python_study/globaltechmap/spider/Results/" 
+fencijieguo_wenjian = jieguo_dizhi + field + year +'.csv'
 
 with open(fencijieguo_wenjian, 'w') as fw:
     for item in stat:
