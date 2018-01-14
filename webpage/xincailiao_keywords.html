@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery-3.2.1.js"></script>
+    <script src="echarts.min.js"></script>
+    <script src="dark.js"></script>
+    <style></style>
+    <title>新材料</title>
+</head>
+<style>
+    div {
+        margin: 0 auto;
+    }
+
+    #xincailiao2017,
+    #xincailiao2016,
+    #xincailiao2015 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        border: 5px solid #BDC0BA
+    }
+
+    #bottom {
+        color: aliceblue
+    }
+
+    h1 {
+
+        color: aliceblue
+    }
+
+    body {
+        background-color: #373C38;
+    }
+
+    p#back-to-top {
+        border: 2px solid #A6DDDA;
+        position: fixed;
+        bottom: 100px;
+        right: 100px;
+    }
+
+    p#back-to-top a {
+        text-align: center;
+        text-decoration: none;
+        color: #A6DDDA;
+        display: block;
+        width: 50px;
+        height: 50px;
+        /*使用CSS3中的transition属性给跳转链接中的文字添加渐变效果*/
+        -moz-transition: color1s;
+        -webkit-transition: color1s;
+        -o-transition: color1s;
+    }
+
+    p#back-to-top a:hover {
+        color: #ddd;
+    }
+</style>
+
+<body>
+    <h1 style="text-align:center">新材料领域统计汇总</h1>
+    <p id="back-to-top">
+        <a href="#top">
+            <span>Back Top</span>
+        </a>
+    </p>
+    <div class="tutu">
+        <div id="xincailiao2015" style="width:1000px;height:600px;">
+        </div>
+        <div id="xincailiao2016" style="width:1000px;height:600px;">
+        </div>
+        <div id="xincailiao2017" style="width:1000px;height:600px;">
+        </div>
+    </div>
+    <div id="bottom">
+        <p style="text-align:center">Data From
+            <a href="http://www.globaltechmap.com/index/field?field_id=7" target="_blank">Globaltechmap</a>
+        </p>
+        <p style="text-align:center">copyright@Kang Chen</p>
+    </div>
+</body>
+<script>
+    var myChart_xcl2015 = echarts.init(document.getElementById('xincailiao2015'));
+    var dataAxis = ['石墨烯', '纳米', '中国', '美国', '金属', '新材料', '复合材料'];
+    var data = [99, 79, 55, 48, 42, 36, 32];
+    var yMax = 100;
+    var dataShadow = [];
+
+    for (var i = 0; i < data.length; i++) {
+        dataShadow.push(yMax);
+    }
+    option_xcl2015 = {
+        title: {
+            text: '新材料领域2015关键词',
+            left: 'center',
+            padding: 20,
+            textStyle: {
+                color: '#FFF'
+            }
+        },
+        xAxis: {
+            data: dataAxis,
+            axisLabel: {
+                inside: true,
+                textStyle: {
+                    color: '#FFF',
+                    fontSize: 20
+                }
+            },
+            axisTick: {
+                show: false
+            },
+            axisLine: {
+                show: false
+            },
+            z: 10
+        },
+        yAxis: {
+            axisLine: {
+                show: false
+            },
+            axisTick: {
+                show: false
+            },
+            axisLabel: {
+                textStyle: {
+                    color: '#787D7B'
+                }
+            }
+        },
+        dataZoom: [
+            {
+                type: 'inside'
+            }
+        ],
+        series: [
+            {
+                type: 'bar',
+                itemStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(
+                            0, 0, 0, 1,
+                            [
+                                { offset: 0, color: '#A6DDDA' },
+                                { offset: 0.5, color: '#66BAB7' },
+                                { offset: 1, color: '#217964' }
+                            ]
+                        )
+                    },
+                    emphasis: {
+                        color: '#60373E'
+                    }
+                },
+                data: data
+            }
+        ],
+        backgroundColor: '#373C38'
+    };
+    myChart_xcl2015.setOption(option_xcl2015);
+
+    var myChart_xcl2016 = echarts.init(document.getElementById('xincailiao2016'));
+    var dataAxis = ['纳米', '石墨烯', '中国', '电池', '美国', '薄膜', '金属', '表面', '聚合物', '催化剂', '中国科学院', '电子', '3D打印', '电极', '太阳能电池', '生物', '分子', '传感器', '碳纤维', '能源', '新材料', '有机', '化学', '太阳能', '日本', '能量', '系统', '复合材料', '量子', '玻璃', '细菌', '设备', '纤维', '环境', '导电', '涂层', '碳纳米管', '工业', '强度', '塑料', '膜', '超', '锂离子', '水', '高端装备', '硅', '光学', '原子', '纳米线', '颗粒', '英国', '高温', '半导体', '超导', '离子', '器件'];
+    var data = [204, 183, 173, 159, 117, 81, 75, 67, 67, 54, 53, 52, 51, 51, 50, 50, 46, 45, 44, 42, 42, 41, 41, 40, 39, 39, 39, 39, 38, 37, 37, 36, 36, 36, 35, 35, 34, 34, 32, 32, 32, 31, 30, 30, 29, 29, 29, 28, 28, 28, 27, 27, 27, 26, 26, 26];
+    var yMax = 250;
+    var dataShadow = [];
+
+    for (var i = 0; i < data.length; i++) {
+        dataShadow.push(yMax);
+    }
+    option_xcl2016 = {
+        title: {
+            text: '新材料领域2016关键词',
+            left: 'center',
+            padding: 20,
+            textStyle: {
+                color: '#FFF'
+            }
+        },
+        xAxis: {
+            data: dataAxis,
+            axisLabel: {
+                inside: true,
+                textStyle: {
+                    color: '#FFF',
+                    fontSize: 20
+                }
+            },
+            axisTick: {
+                show: false
+            },
+            axisLine: {
+                show: false
+            },
+            z: 10
+        },
+        yAxis: {
+            axisLine: {
+                show: false
+            },
+            axisTick: {
+                show: false
+            },
+            axisLabel: {
+                textStyle: {
+                    color: '#787D7B'
+                }
+            }
+        },
+        dataZoom: [
+            {
+                type: 'inside'
+            }
+        ],
+        series: [
+            {
+                type: 'bar',
+                itemStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(
+                            0, 0, 0, 1,
+                            [
+                                { offset: 0, color: '#A6DDDA' },
+                                { offset: 0.5, color: '#66BAB7' },
+                                { offset: 1, color: '#217964' }
+                            ]
+                        )
+                    },
+                    emphasis: {
+                        color: '#60373E'
+                    }
+                },
+                data: data
+            }
+        ],
+        backgroundColor: '#373C38'
+    };
+    myChart_xcl2016.setOption(option_xcl2016);
+
+    var myChart_xcl2017 = echarts.init(document.getElementById('xincailiao2017'));
+    var dataAxis = ['电池', '纳米', '美国', '石墨烯', '金属', '3D打印', '能量', '催化剂', '表面', '聚合物', '新材料', '生物', '复合材料', '太阳能电池', '设备', '电极', '纤维', '薄膜', '钙钛矿', '传感器', '半导体', '日本', '涂层', '强度', '合金', '电子', '中国', '德国', '温度', '碳纳米管', '器件', '打印', '汽车', '分子', '反应', '玻璃', '碳纤维', '织物'];
+    var data = [143, 133, 114, 89, 79, 75, 61, 54, 51, 50, 49, 49, 46, 43, 42, 42, 41, 41, 40, 40, 39, 37, 37, 36, 36, 35, 32, 31, 31, 31, 30, 30, 29, 28, 28, 27, 27, 26];
+    var yMax = 150;
+    var dataShadow = [];
+
+    for (var i = 0; i < data.length; i++) {
+        dataShadow.push(yMax);
+    }
+
+    option_xcl2017 = {
+        title: {
+            text: '新材料领域2017关键词',
+            left: 'center',
+            padding: 20,
+            textStyle: {
+                color: '#FFF'
+            }
+        },
+        xAxis: {
+            data: dataAxis,
+            axisLabel: {
+                inside: true,
+                textStyle: {
+                    color: '#FFF',
+                    fontSize: 20
+                }
+            },
+            axisTick: {
+                show: false
+            },
+            axisLine: {
+                show: false
+            },
+            z: 10
+        },
+        yAxis: {
+            axisLine: {
+                show: false
+            },
+            axisTick: {
+                show: false
+            },
+            axisLabel: {
+                textStyle: {
+                    color: '#787D7B'
+                }
+            }
+        },
+        dataZoom: [
+            {
+                type: 'inside'
+            }
+        ],
+        series: [
+            {
+                type: 'bar',
+                itemStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(
+                            0, 0, 0, 1,
+                            [
+                                { offset: 0, color: '#A6DDDA' },
+                                { offset: 0.5, color: '#66BAB7' },
+                                { offset: 1, color: '#217964' }
+                            ]
+                        )
+                    },
+                    emphasis: {
+                        color: '#60373E'
+                    }
+                },
+                data: data
+            }
+        ],
+        backgroundColor: '#373C38'
+    };
+    myChart_xcl2017.setOption(option_xcl2017);
+
+    // Enable data zoom when user click bar.
+    var zoomSize = 6;
+    myChart_xcl2015.on('click', function (params) {
+        console.log(dataAxis[Math.max(params.dataIndex - zoomSize / 2, 0)]);
+        myChart_xcl2015.dispatchAction({
+            type: 'dataZoom',
+            startValue: dataAxis[Math.max(params.dataIndex - zoomSize / 2, 0)],
+            endValue: dataAxis[Math.min(params.dataIndex + zoomSize / 2, data.length - 1)]
+        });
+    });
+    // Enable data zoom when user click bar.
+    var zoomSize = 6;
+    myChart_xcl2016.on('click', function (params) {
+        console.log(dataAxis[Math.max(params.dataIndex - zoomSize / 2, 0)]);
+        myChart_xcl2016.dispatchAction({
+            type: 'dataZoom',
+            startValue: dataAxis[Math.max(params.dataIndex - zoomSize / 2, 0)],
+            endValue: dataAxis[Math.min(params.dataIndex + zoomSize / 2, data.length - 1)]
+        });
+    });
+    // Enable data zoom when user click bar.
+    var zoomSize = 6;
+    myChart_xcl2017.on('click', function (params) {
+        console.log(dataAxis[Math.max(params.dataIndex - zoomSize / 2, 0)]);
+        myChart_xcl2017.dispatchAction({
+            type: 'dataZoom',
+            startValue: dataAxis[Math.max(params.dataIndex - zoomSize / 2, 0)],
+            endValue: dataAxis[Math.min(params.dataIndex + zoomSize / 2, data.length - 1)]
+        });
+    });
+    $(document).ready(function () {
+        //首先将#back-to-top隐藏
+        $("#back-to-top").hide();
+        //当滚动条的位置处于距顶部300像素以下时，跳转链接出现，否则消失
+        $(function () {
+            $(window).scroll(function () {
+                if ($(window).scrollTop() > 300) {
+                    $("#back-to-top").fadeIn(300);
+                } else {
+                    $("#back-to-top").fadeOut(300);
+                }
+            });
+            //当点击跳转链接后，回到页面顶部位置
+            $("#back-to-top").click(function () {
+                $('body,html').animate({ scrollTop: 0 }, 3);
+                return false;
+            });
+        });
+    });
+</script>
+
+</html>

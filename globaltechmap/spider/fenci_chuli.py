@@ -29,7 +29,7 @@ fields ={
 field_alia = input("请输入需要分析的领域首字母：")
 field = fields[field_alia]
 year = input("请输入需要分析的年份：")
-
+fenxideshisha = field + ' ' + str(year)
 # 输入需要分析的源文件
 daifenxi = "/Users/kangchen/python_study/globaltechmap/spider/MySQL_Results/" + field + '_neirong_' + year + '.csv'
 fencijieguo = []
@@ -53,7 +53,23 @@ print("分析完成，结果正在保存……")
 jieguo_dizhi = "/Users/kangchen/python_study/globaltechmap/spider/Results/" 
 fencijieguo_wenjian = jieguo_dizhi + field + year +'.csv'
 
+words_list = []
+num_list = []
 with open(fencijieguo_wenjian, 'w') as fw:
     for item in stat:
         fw.write(item[0] + ',' + str(item[1]) + '\n')
-print("结果保存完毕，请放心食用！")
+        if item[1] > 25:
+            words_list.append(item[0])
+            num_list.append(item[1])
+
+panduan = input("是否要保存列表：")
+if panduan == 'y':
+    liebiaojieguo = jieguo_dizhi + 'liebiao_jieguo.txt'
+    with open(liebiaojieguo, 'a') as fw:
+        fw.write(fenxideshisha + '\n')
+        fw.write('var dataAxis = ' + str(words_list) + ';\n')
+        fw.write('var data = ' + str(num_list) + ';\n')
+    print("结果保存完毕，请放心食用！")
+else:
+    print("结果保存完毕，请放心食用！")
+
