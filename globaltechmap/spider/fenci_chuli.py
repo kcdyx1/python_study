@@ -1,28 +1,26 @@
 # coding:utf8
-import sys
 
 from jiebafenci import fenci
-import jieba
-import jieba.analyse
+from jiebafenci import fenci_all
 
 # 建立无意义词列表
 stopwords = []
 with open("/Users/kangchen/python_study/globaltechmap/spider/extra_dict/stop_words.txt") as file_object:
     while 1:
-        word = file_object.readline().replace('\n','').strip()
-        stopwords.append(word)
-        if not word:
+        ci = file_object.readline().replace('\n','').strip()
+        stopwords.append(ci)
+        if not ci:
             break
 
 fields ={
-        'hy':'haiyang',
+        'hy': 'haiyang',
         'hk': 'hangkong',
         'ht': 'hangtian',
-        'kjzl':'kejizhanlue',
+        'kjzl': 'kejizhanlue',
         'ny': 'nengyuan',
         'sw': 'shengwu',
         'xjzz': 'xianjinzhizao',
-        'xcl':'xincailiao',
+        'xcl': 'xincailiao',
         'xx': 'xinxi'
 }
 
@@ -37,14 +35,22 @@ stat = {}
 
 with open(daifenxi, 'r') as fr:
     nr = fr.read()
+
+mode = input("选择分词模式：\n  1.全模式输入‘y’；\n  2.精确模式直接回车（默认）\n") 
+if mode == 'y':
+    jieguos = fenci_all(nr)
+    print('全模式分词...')
+else:
     jieguos = fenci(nr)
-    for jieguo in jieguos:
-        if jieguo not in stopwords:
-            if jieguo not in fencijieguo:
-                fencijieguo.append(jieguo)
-            if jieguo not in stat:
-                stat[jieguo] = 0
-            stat[jieguo] += 1
+    print('精确模式分词...')
+
+for jieguo in jieguos:
+    if jieguo not in stopwords:
+        if jieguo not in fencijieguo:
+            fencijieguo.append(jieguo)
+        if jieguo not in stat:
+            stat[jieguo] = 0
+        stat[jieguo] += 1
 
 # 结果排序
 stat = sorted(stat.items(), key=lambda d: d[1], reverse=True)
@@ -62,7 +68,7 @@ with open(fencijieguo_wenjian, 'w') as fw:
             words_list.append(item[0])
             num_list.append(item[1])
 
-panduan = input("是否要保存列表：")
+panduan = input("是否把列表存入文件中：")
 if panduan == 'y':
     liebiaojieguo = jieguo_dizhi + 'liebiao_jieguo.txt'
     with open(liebiaojieguo, 'a') as fw:
@@ -71,5 +77,7 @@ if panduan == 'y':
         fw.write('var data = ' + str(num_list) + ';\n')
     print("结果保存完毕，请放心食用！")
 else:
-    print("结果保存完毕，请放心食用！")
+    print(str(words_list) + '\n')
+    print(str(num_list) + '\n')
+    print("结果打印完毕，请放心食用！")
 

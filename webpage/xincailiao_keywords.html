@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="jquery-3.2.1.js"></script>
-    <script src="echarts.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script src="https://cdn.bootcss.com/echarts/3.8.5/echarts.js"></script>
     <script src="dark.js"></script>
     <style></style>
     <title>新材料</title>
@@ -24,9 +24,6 @@
         border: 5px solid #BDC0BA
     }
 
-    #bottom {
-        color: aliceblue
-    }
 
     h1 {
 
@@ -34,20 +31,20 @@
     }
 
     body {
-        background-color: #373C38;
+        background-color: #faa25c;
     }
 
-    p#back-to-top {
-        border: 2px solid #A6DDDA;
+    #back-to-top a {
+        border: 2px solid #55BCA2;
         position: fixed;
         bottom: 100px;
-        right: 100px;
+        right: 30px;
     }
 
     p#back-to-top a {
         text-align: center;
         text-decoration: none;
-        color: #A6DDDA;
+        color: #55BCA2;
         display: block;
         width: 50px;
         height: 50px;
@@ -58,6 +55,11 @@
     }
 
     p#back-to-top a:hover {
+        color: #ddd;
+    }
+
+    a#gtm {
+        text-decoration: none;
         color: #ddd;
     }
 </style>
@@ -76,14 +78,17 @@
         </div>
         <div id="xincailiao2017" style="width:1000px;height:600px;">
         </div>
+        <div id="test" style="width:1000px;height:600px;">
+        </div>
     </div>
     <div id="bottom">
         <p style="text-align:center">Data From
-            <a href="http://www.globaltechmap.com/index/field?field_id=7" target="_blank">Globaltechmap</a>
+            <a id="gtm" href="http://www.globaltechmap.com/index/field?field_id=7" target="_blank">Globaltechmap</a>
         </p>
         <p style="text-align:center">copyright@Kang Chen</p>
     </div>
 </body>
+
 <script>
     var myChart_xcl2015 = echarts.init(document.getElementById('xincailiao2015'));
     var dataAxis = ['石墨烯', '纳米', '中国', '美国', '金属', '新材料', '复合材料'];
@@ -146,9 +151,9 @@
                         color: new echarts.graphic.LinearGradient(
                             0, 0, 0, 1,
                             [
-                                { offset: 0, color: '#A6DDDA' },
-                                { offset: 0.5, color: '#66BAB7' },
-                                { offset: 1, color: '#217964' }
+                                { offset: 0, color: '#55BCA2' },
+                                { offset: 0.5, color: '#217964' },
+                                { offset: 1, color: '#0B4F3E' }
                             ]
                         )
                     },
@@ -224,9 +229,9 @@
                         color: new echarts.graphic.LinearGradient(
                             0, 0, 0, 1,
                             [
-                                { offset: 0, color: '#A6DDDA' },
-                                { offset: 0.5, color: '#66BAB7' },
-                                { offset: 1, color: '#217964' }
+                                { offset: 0, color: '#55BCA2' },
+                                { offset: 0.5, color: '#217964' },
+                                { offset: 1, color: '#0B4F3E' }
                             ]
                         )
                     },
@@ -303,9 +308,9 @@
                         color: new echarts.graphic.LinearGradient(
                             0, 0, 0, 1,
                             [
-                                { offset: 0, color: '#A6DDDA' },
-                                { offset: 0.5, color: '#66BAB7' },
-                                { offset: 1, color: '#217964' }
+                                { offset: 0, color: '#55BCA2' },
+                                { offset: 0.5, color: '#217964' },
+                                { offset: 1, color: '#0B4F3E' }
                             ]
                         )
                     },
@@ -319,6 +324,8 @@
         backgroundColor: '#373C38'
     };
     myChart_xcl2017.setOption(option_xcl2017);
+
+
 
     // Enable data zoom when user click bar.
     var zoomSize = 6;
@@ -364,11 +371,70 @@
             });
             //当点击跳转链接后，回到页面顶部位置
             $("#back-to-top").click(function () {
-                $('body,html').animate({ scrollTop: 0 }, 3);
+                $('body,html').animate({ scrollTop: 0 }, 1000);
                 return false;
             });
         });
     });
+
+
+    var myChart_test = echarts.init(document.getElementById('test'));
+    var dataAxis = ['纳米', '石墨烯', '中国', '电池', '美国', '薄膜', '金属', '表面', '聚合物', '催化剂', '中国科学院', '电子', '3D打印', '电极', '太阳能电池', '生物', '分子', '传感器', '碳纤维', '能源', '新材料', '有机', '化学', '太阳能', '日本', '能量', '系统', '复合材料', '量子', '玻璃', '细菌', '设备', '纤维', '环境', '导电', '涂层', '碳纳米管', '工业', '强度', '塑料', '膜', '超', '锂离子', '水', '高端装备', '硅', '光学', '原子', '纳米线', '颗粒', '英国', '高温', '半导体', '超导', '离子', '器件'];
+    var data = [204, 183, 173, 159, 117, 81, 75, 67, 67, 54, 53, 52, 51, 51, 50, 50, 46, 45, 44, 42, 42, 41, 41, 40, 39, 39, 39, 39, 38, 37, 37, 36, 36, 36, 35, 35, 34, 34, 32, 32, 32, 31, 30, 30, 29, 29, 29, 28, 28, 28, 27, 27, 27, 26, 26, 26];
+    option = {
+        title: {
+            text: '新材料领域2017关键词',
+            left: 'center',
+            padding: 20,
+            textStyle: {
+                color: '#FFF'
+            }
+        },
+        tooltip: {
+            trigger: 'axis'
+        },
+        grid: {
+            top: '12%',
+            left: '1%',
+            right: '10%',
+            containLabel: true
+        },
+        xAxis: [
+            {
+                type: 'category',
+                data: dataAxis
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value',
+                name: 'Budget (million USD)'
+            }
+        ],
+        dataZoom: [
+            {
+                type: 'slider',
+                show: true,
+                start: 0,
+                end: 10,
+                handleSize: 20
+            },
+            {
+                type: 'inside',
+                start: 94,
+                end: 100
+            }
+        ],
+        series: [
+            {
+                name: '该词出现次数：',
+                type: 'bar',
+                data: data
+            }
+        ]
+    };
+
+    myChart_test.setOption(option);
 </script>
 
 </html>
