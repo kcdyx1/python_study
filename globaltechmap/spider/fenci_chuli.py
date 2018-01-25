@@ -7,21 +7,21 @@ from jiebafenci import fenci_all
 stopwords = []
 with open("/Users/kangchen/python_study/globaltechmap/spider/extra_dict/stop_words.txt") as file_object:
     while 1:
-        ci = file_object.readline().replace('\n','').strip()
+        ci = file_object.readline().replace('\n', '').strip()
         stopwords.append(ci)
         if not ci:
             break
 
-fields ={
-        'hy': 'haiyang',
-        'hk': 'hangkong',
-        'ht': 'hangtian',
-        'kjzl': 'kejizhanlue',
-        'ny': 'nengyuan',
-        'sw': 'shengwu',
-        'xjzz': 'xianjinzhizao',
-        'xcl': 'xincailiao',
-        'xx': 'xinxi'
+fields = {
+    'hy': 'haiyang',
+    'hk': 'hangkong',
+    'ht': 'hangtian',
+    'kjzl': 'kejizhanlue',
+    'ny': 'nengyuan',
+    'sw': 'shengwu',
+    'xjzz': 'xianjinzhizao',
+    'xcl': 'xincailiao',
+    'xx': 'xinxi'
 }
 
 field_alia = input("请输入需要分析的领域首字母：")
@@ -36,7 +36,7 @@ stat = {}
 with open(daifenxi, 'r') as fr:
     nr = fr.read()
 
-mode = input("选择分词模式：\n  1.全模式输入‘y’；\n  2.精确模式直接回车（默认）\n") 
+mode = input("选择分词模式：\n  1.全模式输入‘y’；\n  2.精确模式直接回车（默认）\n")
 if mode == 'y':
     jieguos = fenci_all(nr)
     print('全模式分词...')
@@ -56,8 +56,8 @@ for jieguo in jieguos:
 stat = sorted(stat.items(), key=lambda d: d[1], reverse=True)
 print("分析完成，结果正在保存……")
 # 结果保存
-jieguo_dizhi = "/Users/kangchen/python_study/globaltechmap/spider/Results/" 
-fencijieguo_wenjian = jieguo_dizhi + field + year +'.csv'
+jieguo_dizhi = "/Users/kangchen/python_study/globaltechmap/spider/Results/"
+fencijieguo_wenjian = jieguo_dizhi + field + year + '.csv'
 
 words_list = []
 num_list = []
@@ -80,4 +80,3 @@ else:
     print(str(words_list) + '\n')
     print(str(num_list) + '\n')
     print("结果打印完毕，请放心食用！")
-

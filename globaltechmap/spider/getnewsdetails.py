@@ -3,7 +3,6 @@
 import requests
 from bs4 import BeautifulSoup
 from getnews import get_news
-import pandas as pd
 
 page_list = (range(1,10))
 for x in page_list:
@@ -33,14 +32,3 @@ for x in page_list:
                  fw.write(New_record + '\n')
              print(news_detail['title'])
 
-            #  print(news_detail)
-            #  print('\n')
-            #  print("新闻编号" + str(news_id))
-            #  print("新闻标题：" + news_title)
-            #  print("链接地址" + news_url)
-            #  print("发布时间" + publish_date)
-            #  print("国家：" + area)
-            #  print("消息源：" + laiyuan)
-            #  print("新闻内容：" + content)
-            #  print(zlly)
-            #  print("\n")
